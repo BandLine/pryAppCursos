@@ -1,0 +1,85 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    android:background="#FFFFFF"
+    android:elevation="3dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <!-- IMAGEN DEL CURSO -->
+    <ImageView
+        android:id="@+id/imgCursoVer"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:background="#E2E8F0"
+        android:scaleType="centerCrop"
+        android:contentDescription="@null" />
+
+    <!-- INFORMACIÓN DEL CURSO -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- NOMBRE DEL CURSO -->
+        <TextView
+            android:id="@+id/txtCursoVer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="#173B61"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- BARRA DE INSCRIPCIONES -->
+        <ProgressBar
+            android:id="@+id/barraInscripciones"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progressTint="#15558B"
+            android:progressBackgroundTint="#E2E8F0" />
+
+        <!-- INSCRITOS Y CUPO -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- TOTAL DE INSCRITOS -->
+            <TextView
+                android:id="@+id/txtRegistradosVer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#64748B"
+                android:textSize="13sp" />
+
+            <!-- CUPO DEL CURSO -->
+            <TextView
+                android:id="@+id/txtCapacidadVer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#64748B"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
