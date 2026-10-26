@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">pryAppCursos</string>
+    <string name="txtTitulo">CÁTALOGO DE CURSOS</string>
+    <string name="btnVerRegistros">VER REGISTROS</string>
+    <string name="imgCurso">TODO</string>
+    <string name="txtSalon">Salón :</string>
+    <string name="txtNombreCurso">TextView</string>
+    <string name="btnVerDetalle">VER DETALLE</string>
+    <string name="btnRegistrarse">REGISTRARSE</string>
 </resources>
