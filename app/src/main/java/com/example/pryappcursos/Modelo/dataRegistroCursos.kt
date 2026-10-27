@@ -1,12 +1,11 @@
 package com.example.pryappcursos.Modelo
 
-import kotlinx.serialization.SerialName
-
+import com.google.gson.annotations.SerializedName
 
 data class dataRegistroCursos(
-    @SerialName("id_inscripcion") val id_inscripcion: Int = 0,
-    @SerialName("id_curso") val id_curso: Int = 0,
-    @SerialName("matricula") val matricula: String = "",
-    @SerialName("correo_institucional") val correo_institucional: String = "",
-    @SerialName("fecha_registro") val fecha_registro: String = ""
+    @SerializedName("id_inscripcion") val id_inscripcion: Int = 0,
+    @SerializedName("id_curso") val id_curso: Int = 0,
+    @SerializedName("matricula") val matricula: String = "",
+    @SerializedName("correo_institucional") val correo_institucional: String = "",
+    @SerializedName("fecha_registro") val fecha_registro: String = ""
 )

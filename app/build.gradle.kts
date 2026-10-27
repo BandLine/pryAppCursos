@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    kotlin("plugin.serialization") version "1.9.24"
+    kotlin("plugin.serialization") version "2.2.10"
 }
 
 android {
@@ -45,10 +45,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     // librerias
     // 2. Librería principal de Kotlinx Serialization JSON
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
-
-// 3. Convertidor oficial de Retrofit para Kotlinx Serialization
-    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
 // Retrofit & OkHttp
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
