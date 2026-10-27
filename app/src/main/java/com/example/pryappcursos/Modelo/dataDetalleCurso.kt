@@ -1,9 +1,6 @@
 package com.example.pryappcursos.Modelo
 
 import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-
-@Serializable
 data class dataDetalleCurso(
     @SerialName(value = "id_curso") val id_curso: Int = 0,
     @SerialName(value = "codigo") val codigo: String = "",
