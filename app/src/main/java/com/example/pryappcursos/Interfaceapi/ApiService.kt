@@ -1,4 +1,6 @@
 package com.example.pryappcursos.Interfaceapi
+import com.example.pryappcursos.Modelo.dataCarreras
+import com.example.pryappcursos.Modelo.dataCursos
 import com.example.pryappcursos.Modelo.dataDetalleCurso
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -7,12 +9,12 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    //@GET(value = "obtener_carreras.php")
-    /*suspend fun obtenerCarreras(): List<dataCarreras>
+    @GET(value = "obtener_carreras.php")
+    suspend fun obtenerCarreras(): List<dataCarreras>
 
     @GET(value = "obtener_cursos.php")
     suspend fun obtenerCursos(@Query(value = "carrera_id") idCarrera: Int): List<dataCursos>
-*/
+
     @GET(value = "detalle_curso.php")
     suspend fun obtenerDetalleCurso(@Query(value = "id_curso") idCurso: Int): List<dataDetalleCurso>
 /*
