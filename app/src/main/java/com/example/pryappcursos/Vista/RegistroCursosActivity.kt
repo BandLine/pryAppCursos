@@ -1,10 +1,11 @@
-package com.example.pryappcursos
+package com.example.pryappcursos.Vista
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.pryappcursos.R
 
 class RegistroCursosActivity : AppCompatActivity() {
 
