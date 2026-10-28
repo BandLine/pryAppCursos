@@ -1,5 +1,4 @@
 package com.example.pryappcursos.Vista
-
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,21 +11,19 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pryappcursos.Adaptador.cursosAdaptador
 import com.example.pryappcursos.Modelo.dataCarreras
 import com.example.pryappcursos.Modelo.dataCursos
 import com.example.pryappcursos.Presentador.clsCarrerasPresentador
 import com.example.pryappcursos.R
-
 class MainActivity : AppCompatActivity() {
-    private lateinit var presenter: clsCarrerasPresentador
-    private lateinit var spinnerCarreras: Spinner
-    private lateinit var recyclerCursos: RecyclerView
+    private lateinit var presentador: clsCarrerasPresentador
+    private lateinit var spnCarreras: Spinner
+    private lateinit var rvCursos: RecyclerView
     private lateinit var btnVerRegistros: Button
-    private lateinit var adapterCursos: cursosAdaptador
-
+    private lateinit var adaptadorCursos: cursosAdaptador
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -36,67 +33,55 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        spinnerCarreras = findViewById(R.id.spnCategorias)
-        recyclerCursos = findViewById(R.id.rvLista)
+        spnCarreras = findViewById(R.id.spnCategorias)
+        rvCursos = findViewById(R.id.rvLista)
         btnVerRegistros = findViewById(R.id.btnVerRegistros)
-
-        recyclerCursos.layoutManager = LinearLayoutManager(this)
-        adapterCursos = cursosAdaptador(this, emptyList())
-        recyclerCursos.adapter = adapterCursos
-
-        presenter = clsCarrerasPresentador(this)
+        rvCursos.layoutManager = GridLayoutManager(this, 2)
+        adaptadorCursos = cursosAdaptador(this, emptyList())
+        rvCursos.adapter = adaptadorCursos
+        presentador = clsCarrerasPresentador(this)
         configurarListeners()
-        presenter.iniciar()
+        presentador.iniciar()
     }
-
     private fun configurarListeners() {
-        spinnerCarreras.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        spnCarreras.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                presenter.seleccionarCarrera(position)
+                presentador.seleccionarCarrera(position)
             }
-
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
-        btnVerRegistros.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                presenter.verRegistros()
-            }
-        })
+        btnVerRegistros.setOnClickListener { presentador.verRegistros() }
     }
-
     fun mostrarCarreras(carreras: List<dataCarreras>) {
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, carreras)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerCarreras.adapter = adapter
+        val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, carreras)
+        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spnCarreras.adapter = adaptador
     }
-
     fun mostrarCursos(cursos: List<dataCursos>) {
-        adapterCursos.actualizarLista(cursos)
+        adaptadorCursos.actualizarLista(cursos)
     }
-
-    fun seleccionarCurso(curso: dataCursos) {
-        presenter.seleccionarCurso(curso)
+    fun verDetalle(curso: dataCursos) {
+        presentador.verDetalle(curso)
     }
-    fun registrarseCurso(curso: dataCursos) {
-        presenter.registrarseCurso(curso)
+    fun registrarse(curso: dataCursos) {
+        presentador.registrarse(curso)
     }
-
-    fun abrirDetalleCurso(id: Int) {
+    fun abrirDetalleCurso(idCurso: Int) {
         val intent = Intent(this, DetalleCursoActivity::class.java)
-        intent.putExtra("ID_CURSO", id)
+        intent.putExtra("ID_CURSO", idCurso)
+        startActivity(intent)
+    }
+    fun abrirRegistro(idCurso: Int, nombre: String, imagen: String) {
+        val intent = Intent(this, RegistroCursosActivity::class.java)
+        intent.putExtra("ID_CURSO", idCurso)
+        intent.putExtra("NOMBRE_CURSO", nombre)
+        intent.putExtra("IMAGEN_CURSO", imagen)
         startActivity(intent)
     }
     fun abrirVerRegistros() {
         val intent = Intent(this, VerRegistrosActivity::class.java)
         startActivity(intent)
     }
-    fun abrirRegistroCurso(id: Int) {
-        val intent = Intent(this, RegistroCursosActivity::class.java)
-        intent.putExtra("ID_CURSO", id)
-        startActivity(intent)
-    }
-
     fun mostrarError(mensaje: String) {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
