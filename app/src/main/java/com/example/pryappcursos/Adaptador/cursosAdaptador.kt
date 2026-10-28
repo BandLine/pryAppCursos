@@ -3,6 +3,7 @@ package com.example.pryappcursos.Adaptador
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,8 @@ class cursosAdaptador(
         val tvNombre: TextView = itemView.findViewById(R.id.txtNombreCurso)
         val tvSalon: TextView = itemView.findViewById(R.id.txtSalon)
         val imgCurso: ImageView = itemView.findViewById(R.id.imgCurso)
+        val btnVerDetalle: Button = itemView.findViewById(R.id.btnVerDetalle)
+        val btnRegistrarse: Button = itemView.findViewById(R.id.btnRegistrarse)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CursoViewHolder {
@@ -38,17 +41,28 @@ class cursosAdaptador(
 
         Glide.with(holder.itemView.context)
             .load(urlImagenCompleta)
-            .placeholder(android.R.drawable.ic_menu_gallery) // Imagen por defecto mientras carga
-            .error(android.R.drawable.stat_notify_error)     // Imagen si falla la carga
+            .placeholder(android.R.drawable.ic_menu_gallery)
+            .error(android.R.drawable.stat_notify_error)
             .into(holder.imgCurso)
 
         holder.itemView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                // Esta funcion se ejecuta en la vista MainActivity
-                // y se manda al presentador para que se abra el detalle del curso
                 activity.seleccionarCurso(curso)
             }
         })
+
+        holder.btnVerDetalle.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                activity.seleccionarCurso(curso)
+            }
+        })
+
+        holder.btnRegistrarse.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                activity.registrarseCurso(curso)
+            }
+        })
+
     }
 
     override fun getItemCount(): Int {
