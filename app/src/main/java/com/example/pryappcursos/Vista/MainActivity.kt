@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var presenter: clsCarrerasPresentador
     private lateinit var spinnerCarreras: Spinner
     private lateinit var recyclerCursos: RecyclerView
+    private lateinit var btnVerRegistros: Button
     private lateinit var adapterCursos: cursosAdaptador
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         spinnerCarreras = findViewById(R.id.spnCategorias)
         recyclerCursos = findViewById(R.id.rvLista)
+        btnVerRegistros = findViewById(R.id.btnVerRegistros)
 
         recyclerCursos.layoutManager = LinearLayoutManager(this)
         adapterCursos = cursosAdaptador(this, emptyList())
@@ -55,6 +58,11 @@ class MainActivity : AppCompatActivity() {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
+        btnVerRegistros.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                presenter.verRegistros()
+            }
+        })
     }
 
     fun mostrarCarreras(carreras: List<dataCarreras>) {
@@ -70,9 +78,21 @@ class MainActivity : AppCompatActivity() {
     fun seleccionarCurso(curso: dataCursos) {
         presenter.seleccionarCurso(curso)
     }
+    fun registrarseCurso(curso: dataCursos) {
+        presenter.registrarseCurso(curso)
+    }
 
     fun abrirDetalleCurso(id: Int) {
         val intent = Intent(this, DetalleCursoActivity::class.java)
+        intent.putExtra("ID_CURSO", id)
+        startActivity(intent)
+    }
+    fun abrirVerRegistros() {
+        val intent = Intent(this, VerRegistrosActivity::class.java)
+        startActivity(intent)
+    }
+    fun abrirRegistroCurso(id: Int) {
+        val intent = Intent(this, RegistroCursosActivity::class.java)
         intent.putExtra("ID_CURSO", id)
         startActivity(intent)
     }

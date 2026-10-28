@@ -15,14 +15,10 @@ class clsCarrerasPresentador (val vista: MainActivity){
     private var listaCarreras: List<dataCarreras> = emptyList()
 
     fun iniciar() {
-        // Se usa un Scope simple para no bloquear la interfaz
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                // 1. Cargar la lista de carreras en el Spinner
                 listaCarreras = modeloCarreras.obtenerCarreras()
                 vista.mostrarCarreras(listaCarreras)
-
-                // 2. Cargar TODOS los cursos por defecto (carrera_id = 0)
                 cargarCursos(0)
 
             } catch (e: Exception) {
@@ -34,7 +30,6 @@ class clsCarrerasPresentador (val vista: MainActivity){
     fun seleccionarCarrera(posicion: Int) {
         if (posicion >= 0 && posicion < listaCarreras.size) {
             val carrera = listaCarreras[posicion]
-            // Si carrera.id_carrera es 0, la API traerá todos; si es > 0, filtrará por esa carrera
             cargarCursos(carrera.id_carrera)
         }
     }
@@ -52,5 +47,11 @@ class clsCarrerasPresentador (val vista: MainActivity){
 
     fun seleccionarCurso(curso: dataCursos) {
         vista.abrirDetalleCurso(curso.id_curso)
+    }
+    fun registrarseCurso(curso: dataCursos) {
+        vista.abrirRegistroCurso(curso.id_curso)
+    }
+    fun verRegistros() {
+        vista.abrirVerRegistros()
     }
 }
