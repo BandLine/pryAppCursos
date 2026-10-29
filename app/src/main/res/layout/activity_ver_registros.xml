@@ -1,5 +1,4 @@
-
-<androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,98 +6,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F7FB"
-    tools:ignore="HardcodedText"
     tools:context=".Vista.VerRegistrosActivity">
 
-    <!-- ENCABEZADO -->
+    <!-- ENCABEZADO AZUL -->
     <LinearLayout
-        android:id="@+id/encabezadoEstado"
+        android:id="@+id/encabezado"
         android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:background="#15558B"
+        android:layout_height="56dp"
+        android:background="#155A96"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Regresar"
+            android:src="@android:drawable/ic_media_previous"
+            app:tint="@android:color/white" />
+
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/txtTitulo"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
             android:text="ESTADO DE INSCRIPCIONES"
-            android:textColor="#FFFFFF"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <View
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+
     </LinearLayout>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- CONTENIDO -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#F4F7FB"
         android:orientation="vertical"
         android:padding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/encabezadoEstado"
+        app:layout_constraintTop_toBottomOf="@id/encabezado"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- FILTRO DE CARRERAS -->
+        <!-- FILTRO POR CARRERA -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
-            android:elevation="2dp"
+            android:background="@android:color/white"
             android:orientation="vertical"
-            android:padding="4dp">
+            android:padding="8dp"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="Filtrar por carrera"
+                android:textColor="#64748B"
+                android:textSize="12sp" />
 
             <Spinner
-                android:id="@+id/spnCarrerasEstado"
+                android:id="@+id/spnCarreras"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:spinnerMode="dropdown" />
+                android:layout_height="48dp" />
 
         </LinearLayout>
 
-        <!-- TOTAL DE INSCRIPCIONES -->
+        <!-- TOTAL -->
         <TextView
             android:id="@+id/txtTotal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"
             android:gravity="end"
-            android:textColor="#172B4D"
+            android:textColor="#1E293B"
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <!-- LISTA DINÁMICA DE INSCRIPCIONES -->
+        <!-- LISTA DE CURSOS -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvEstado"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_marginBottom="12dp"
-            android:clipToPadding="false"
-            android:padding="4dp"
-            android:scrollbars="vertical"
-            tools:listitem="@android:layout/simple_list_item_1" />
+            tools:listitem="@layout/item_ver_cursos" />
 
-        <!-- BOTÓN VOLVER AL CATÁLOGO -->
+        <!-- BOTÓN VOLVER -->
         <Button
-            android:id="@+id/btnVolverCatalogo"
+            android:id="@+id/btnVolver"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:backgroundTint="#15558B"
-            android:text="VOLVER AL CATÁLOGO"
-            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#155A96"
+            android:text="VOLVER"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
-            android:textStyle="bold"
-            app:cornerRadius="10dp" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 

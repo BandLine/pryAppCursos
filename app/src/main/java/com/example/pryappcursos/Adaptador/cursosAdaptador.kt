@@ -25,6 +25,25 @@ class cursosAdaptador(private val activity: MainActivity, private var listaCurso
     }
     override fun onBindViewHolder(holder: CursoViewHolder, position: Int) {
         val curso = listaCursos[position]
+        holder.tvNombre.text = curso.nombre
+        holder.tvSalon.text = "Salon: " + curso.Salon
+
+        val baseUrl = "http://192.168.1.184/cursos_api/"
+        val urlImagenCompleta = baseUrl + curso.imagen_url
+
+        Glide.with(holder.itemView.context)
+            .load(urlImagenCompleta)
+            .placeholder(android.R.drawable.ic_menu_gallery) // Imagen por defecto mientras carga
+            .error(android.R.drawable.stat_notify_error)     // Imagen si falla la carga
+            .into(holder.imgCurso)
+
+        holder.itemView.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                // Esta funcion se ejecuta en la vista MainActivity
+                // y se manda al presentador para que se abra el detalle del curso
+                activity.seleccionarCurso(curso)
+            }
+        })
         holder.txtNombreCurso.text = curso.nombre
         holder.txtEspacio.text = curso.espacio
         val urlImagen = RetrofitCliente.BASE_URL + curso.imagen_url

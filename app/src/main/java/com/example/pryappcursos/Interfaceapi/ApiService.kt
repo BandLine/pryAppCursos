@@ -2,6 +2,7 @@ package com.example.pryappcursos.Interfaceapi
 import com.example.pryappcursos.Modelo.dataCarreras
 import com.example.pryappcursos.Modelo.dataCursos
 import com.example.pryappcursos.Modelo.dataDetalleCurso
+import com.example.pryappcursos.Modelo.dataEstadoInscripciones
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
@@ -20,9 +21,9 @@ interface ApiService {
 /*
     @POST("registrar_Inscripciones.php")
     suspend fun registrarInscripcion(@Body request: RegistroRequest): RegistroResponse
-
+*/
     @GET(value = "obtener_detalle_inscripciones.php")
     suspend fun obtenerEstadoInscripciones(@Query(value = "carrera_id") idCarrera: Int): dataEstadoInscripciones
- */
+
 
 }
