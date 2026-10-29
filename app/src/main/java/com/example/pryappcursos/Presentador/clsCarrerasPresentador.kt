@@ -1,5 +1,4 @@
 package com.example.pryappcursos.Presentador
-
 import com.example.pryappcursos.Modelo.clsCarrerasModelo
 import com.example.pryappcursos.Modelo.clsCursosModelo
 import com.example.pryappcursos.Modelo.dataCarreras
@@ -8,37 +7,26 @@ import com.example.pryappcursos.Vista.MainActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-
-class clsCarrerasPresentador (val vista: MainActivity){
+class clsCarrerasPresentador(private val vista: MainActivity) {
     private val modeloCarreras = clsCarrerasModelo()
     private val modeloCursos = clsCursosModelo()
     private var listaCarreras: List<dataCarreras> = emptyList()
-
     fun iniciar() {
-        // Se usa un Scope simple para no bloquear la interfaz
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                // 1. Cargar la lista de carreras en el Spinner
                 listaCarreras = modeloCarreras.obtenerCarreras()
                 vista.mostrarCarreras(listaCarreras)
-
-                // 2. Cargar TODOS los cursos por defecto (carrera_id = 0)
-                cargarCursos(0)
-
             } catch (e: Exception) {
-                vista.mostrarError("Error: " + e.localizedMessage)
+                vista.mostrarError("Error al cargar carreras: " + e.localizedMessage)
             }
         }
     }
-
     fun seleccionarCarrera(posicion: Int) {
         if (posicion >= 0 && posicion < listaCarreras.size) {
             val carrera = listaCarreras[posicion]
-            // Si carrera.id_carrera es 0, la API traerá todos; si es > 0, filtrará por esa carrera
             cargarCursos(carrera.id_carrera)
         }
     }
-
     private fun cargarCursos(idCarrera: Int) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
@@ -49,8 +37,13 @@ class clsCarrerasPresentador (val vista: MainActivity){
             }
         }
     }
-
-    fun seleccionarCurso(curso: dataCursos) {
+    fun verDetalle(curso: dataCursos) {
         vista.abrirDetalleCurso(curso.id_curso)
+    }
+    fun registrarse(curso: dataCursos) {
+        vista.abrirRegistro(curso.id_curso, curso.nombre, curso.imagen_url)
+    }
+    fun verRegistros() {
+        vista.abrirVerRegistros()
     }
 }
