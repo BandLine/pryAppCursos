@@ -1,4 +1,5 @@
 
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,42 +8,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#15558B"
+    tools:context=".Vista.RegistroCursosActivity">
+
     tools:ignore="HardcodedText"
     tools:context=".Vista.RegistroCursosActivity">
 
-    <!-- ENCABEZADO -->
     <LinearLayout
-        android:id="@+id/encabezadoRegistro"
+        android:id="@+id/encabezado"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="56dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="#15558B"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/txtTitulo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="REGISTRO AL CURSO"
-            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:text="@string/titulo_registro"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
-    <!-- CONTENIDO -->
+    <!-- Contenido desplazable -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#F4F7FB"
+        android:background="@color/fondo"
         android:fillViewport="true"
-        android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/encabezadoRegistro"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/encabezado">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,154 +52,164 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- INSCRIPCIÓN -->
+            <!-- Número de inscripción -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="INSCRIPCIÓN:"
-                android:textColor="#172B4D"
+                android:text="@string/lbl_inscripcion"
+                android:textColor="@color/texto"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- INFORMACIÓN DEL CURSO -->
+            <TextView
+                android:id="@+id/txtInscripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/texto"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-            <!-- MATRÍCULA -->
+            <!-- Tarjeta del curso -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="#E4E9F0"
-                android:elevation="2dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/fondo_tarjeta"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
                 <ImageView
-                    android:id="@+id/imgCursoRegistro"
-                    android:layout_width="96dp"
-                    android:layout_height="70dp"
-                    android:background="#D5E0EB"
-                    android:contentDescription="Imagen del curso"
+                    android:id="@+id/imgCurso"
+                    android:layout_width="100dp"
+                    android:layout_height="68dp"
+                    android:background="@color/gris_claro"
+                    android:contentDescription="@string/imagen_curso"
                     android:scaleType="centerCrop" />
 
                 <TextView
-                    android:id="@+id/txtCursoRegistro"
+                    android:id="@+id/txtNombreCurso"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_weight="1"
-                    android:textColor="#172B4D"
+                    android:gravity="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/texto"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="26dp"
-                android:text="MATRÍCULA DEL ALUMNO:"
-                android:textColor="#172B4D"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/etMatricula"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                android:background="#FFFFFF"
-                android:hint="Ingrese su matrícula"
-                android:inputType="number"
-                android:maxLength="15"
-                android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:textColor="#172B4D"
-                android:textColorHint="#94A3B8"
-                android:textSize="17sp" />
-
-            <!-- FECHA DE REGISTRO -->
+            <!-- Matrícula -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="22dp"
-                android:text="FECHA DE REGISTRO:"
-                android:textColor="#172B4D"
+                android:text="@string/lbl_matricula"
+                android:textColor="@color/texto"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etFecha"
+                android:id="@+id/txtMatricula"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                android:background="#FFFFFF"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:autofillHints=""
+                android:background="@drawable/fondo_campo"
+                android:hint="@string/hint_matricula"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="20"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textColor="@color/texto"
+                android:textSize="16sp" />
+
+            <!-- Fecha de inscripción -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/lbl_fecha"
+                android:textColor="@color/texto"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtFecha"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:autofillHints=""
+                android:background="@drawable/fondo_campo"
                 android:clickable="true"
                 android:cursorVisible="false"
                 android:drawableEnd="@android:drawable/ic_menu_my_calendar"
                 android:focusable="false"
-                android:hint="Seleccione una fecha"
+                android:hint="@string/hint_fecha"
                 android:inputType="none"
                 android:paddingStart="14dp"
-                android:paddingEnd="14dp"
-                android:textColor="#172B4D"
-                android:textColorHint="#94A3B8"
-                android:textSize="17sp" />
+                android:paddingEnd="8dp"
+                android:textColor="@color/texto"
+                android:textSize="16sp" />
 
-            <!-- CORREO INSTITUCIONAL -->
+            <!-- Correo electrónico -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="22dp"
-                android:text="CORREO INSTITUCIONAL:"
-                android:textColor="#172B4D"
+                android:layout_marginTop="18dp"
+                android:text="@string/lbl_correo"
+                android:textColor="@color/texto"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/etCorreo"
+                android:id="@+id/txtCorreo"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
-                android:background="#FFFFFF"
-                android:hint="Ingrese su correo institucional"
+                android:layout_height="50dp"
+                android:layout_marginTop="6dp"
+                android:autofillHints=""
+                android:background="@drawable/fondo_campo"
+                android:hint="@string/hint_correo"
                 android:inputType="textEmailAddress"
                 android:paddingStart="14dp"
                 android:paddingEnd="14dp"
-                android:textColor="#172B4D"
-                android:textColorHint="#94A3B8"
-                android:textSize="17sp" />
+                android:textColor="@color/texto"
+                android:textSize="16sp" />
 
-            <!-- CONFIRMAR INSCRIPCIÓN -->
+            <!-- Botón confirmar -->
             <Button
                 android:id="@+id/btnConfirmar"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_marginTop="32dp"
-                android:backgroundTint="#099653"
-                android:text="CONFIRMAR INSCRIPCIÓN"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
+                android:layout_height="56dp"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="@color/verde"
+                android:text="@string/btn_confirmar"
+                android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
 
-            <!-- CANCELAR -->
+            <!-- Botón cancelar -->
             <Button
                 android:id="@+id/btnCancelar"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="#E0E4E8"
-                android:text="CANCELAR"
-                android:textAllCaps="false"
-                android:textColor="#172B4D"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/gris_boton"
+                android:text="@string/btn_cancelar"
+                android:textColor="@color/texto"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
 
         </LinearLayout>
+
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

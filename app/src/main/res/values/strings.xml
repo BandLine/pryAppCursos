@@ -1,10 +1,27 @@
 <resources>
     <string name="app_name">pryAppCursos</string>
-    <string name="txtTitulo">CÁTALOGO DE CURSOS</string>
-    <string name="btnVerRegistros">VER REGISTROS</string>
-    <string name="imgCurso">TODO</string>
-    <string name="txtSalon">Salón :</string>
-    <string name="txtNombreCurso">TextView</string>
-    <string name="btnVerDetalle">VER DETALLE</string>
-    <string name="btnRegistrarse">REGISTRARSE</string>
+    <string name="titulo_catalogo">CATÁLOGO DE CURSOS</string>
+    <string name="titulo_detalle">DETALLE DEL CURSO</string>
+    <string name="titulo_registro">REGISTRO AL CURSO</string>
+    <string name="titulo_estado">ESTADO DE INSCRIPCIONES</string>
+    <string name="filtrar_carrera">Filtrar por Carrera:</string>
+    <string name="btn_ver_registros">VER REGISTROS</string>
+    <string name="btn_ver_detalle">VER DETALLE</string>
+    <string name="btn_registrarse">REGISTRARSE</string>
+    <string name="lbl_descripcion">DESCRIPCIÓN:</string>
+    <string name="lbl_espacio">ESPACIO:</string>
+    <string name="lbl_total_horas">TOTAL HORAS:</string>
+    <string name="lbl_dias">DÍAS DE ATENCIÓN:</string>
+    <string name="lbl_inscripcion">INSCRIPCIÓN:</string>
+    <string name="lbl_matricula">MATRÍCULA DEL ALUMNO:</string>
+    <string name="lbl_fecha">FECHA DE REGISTRO:</string>
+    <string name="lbl_correo">CORREO INSTITUCIONAL:</string>
+    <string name="hint_matricula">Escribe la matrícula y presiona Listo</string>
+    <string name="hint_fecha">Selecciona la fecha</string>
+    <string name="hint_correo">Se llena al buscar la matrícula</string>
+    <string name="btn_confirmar">CONFIRMAR INSCRIPCIÓN</string>
+    <string name="btn_cancelar">CANCELAR</string>
+    <string name="btn_volver">VOLVER AL CATÁLOGO</string>
+    <string name="regresar">Regresar</string>
+    <string name="imagen_curso">Imagen del curso</string>
 </resources>

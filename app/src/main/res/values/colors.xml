@@ -2,7 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <color name="verde">#4CAF50</color>
-    <color name="azul">#155A96</color>
+    <color name="azul">#FF15558B</color>
+    <color name="verde">#FF148517</color>
+    <color name="fondo">#FFF4F7FB</color>
+    <color name="texto">#FF172B4D</color>
+    <color name="texto_gris">#FF64748B</color>
+    <color name="gris_claro">#FFE2E8F0</color>
+    <color name="gris_boton">#FFE0E4E8</color>
 </resources>
