@@ -15,7 +15,7 @@ interface ApiService {
     @GET("obtener_carreras.php")
     suspend fun obtenerCarreras(): List<dataCarreras>
     @GET("obtener_cursos.php")
-    suspend fun obtenerCursos(@Query("carrera_id") idCarrera: Int): List<dataRegistroCursos>
+    suspend fun obtenerCursos(@Query("carrera_id") idCarrera: Int): List<dataCursos>
     @GET("detalle_curso.php")
     suspend fun obtenerDetalleCurso(@Query("id_curso") idCurso: Int): List<dataDetalleCurso>
     @POST("buscar_alumno.php")
@@ -24,21 +24,4 @@ interface ApiService {
     suspend fun registrarInscripcion(@Body datos: dataRegistroCursos): dataRespuestaRegistro
     @GET("obtener_detalle_inscripciones.php")
     suspend fun obtenerEstadoInscripciones(@Query("carrera_id") idCarrera: Int): dataEstadoInscripciones
-
-    @GET(value = "obtener_carreras.php")
-    suspend fun obtenerCarreras(): List<dataCarreras>
-
-    @GET(value = "obtener_cursos.php")
-    suspend fun obtenerCursos(@Query(value = "carrera_id") idCarrera: Int): List<dataCursos>
-
-    @GET(value = "detalle_curso.php")
-    suspend fun obtenerDetalleCurso(@Query(value = "id_curso") idCurso: Int): List<dataDetalleCurso>
-/*
-    @POST("registrar_Inscripciones.php")
-    suspend fun registrarInscripcion(@Body request: RegistroRequest): RegistroResponse
-
-    @GET(value = "obtener_detalle_inscripciones.php")
-    suspend fun obtenerEstadoInscripciones(@Query(value = "carrera_id") idCarrera: Int): dataEstadoInscripciones
- */
-
 }

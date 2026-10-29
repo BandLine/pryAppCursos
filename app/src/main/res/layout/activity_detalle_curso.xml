@@ -9,7 +9,6 @@
     android:background="#F4F7FB"
     tools:ignore="HardcodedText"
     tools:context=".Vista.DetalleCursoActivity">
-
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -19,14 +18,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingBottom="30dp">
-
-            <!-- IMAGEN DEL CURSO -->
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
@@ -34,8 +30,6 @@
                 android:background="#DFE8F1"
                 android:scaleType="centerCrop"
                 android:contentDescription="Imagen del curso" />
-
-            <!-- NOMBRE DEL CURSO -->
             <TextView
                 android:id="@+id/txtNombre"
                 android:layout_width="match_parent"
@@ -46,8 +40,6 @@
                 android:textColor="#173B61"
                 android:textSize="24sp"
                 android:textStyle="bold" />
-
-            <!-- CÓDIGO DEL CURSO -->
             <TextView
                 android:id="@+id/txtCodigo"
                 android:layout_width="match_parent"
@@ -57,8 +49,6 @@
                 android:layout_marginEnd="20dp"
                 android:textColor="#64748B"
                 android:textSize="16sp" />
-
-            <!-- DESCRIPCIÓN -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,7 +59,6 @@
                 android:textColor="#15558B"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/txtDescripcion"
                 android:layout_width="match_parent"
@@ -83,8 +72,6 @@
                 android:lineSpacingExtra="4dp"
                 android:textColor="#334155"
                 android:textSize="15sp" />
-
-            <!-- ESPACIO -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,7 +82,6 @@
                 android:textColor="#15558B"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/txtEspacio"
                 android:layout_width="match_parent"
@@ -108,8 +94,6 @@
                 android:padding="14dp"
                 android:textColor="#334155"
                 android:textSize="16sp" />
-
-            <!-- TOTAL HORAS -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,7 +104,6 @@
                 android:textColor="#15558B"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/txtHoras"
                 android:layout_width="match_parent"
@@ -133,8 +116,6 @@
                 android:padding="14dp"
                 android:textColor="#334155"
                 android:textSize="16sp" />
-
-            <!-- DÍAS DE ATENCIÓN -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -145,7 +126,6 @@
                 android:textColor="#15558B"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-
             <TextView
                 android:id="@+id/txtDias"
                 android:layout_width="match_parent"
@@ -159,8 +139,6 @@
                 android:lineSpacingExtra="3dp"
                 android:textColor="#334155"
                 android:textSize="16sp" />
-
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

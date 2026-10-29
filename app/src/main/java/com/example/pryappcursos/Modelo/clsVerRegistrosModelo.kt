@@ -4,7 +4,10 @@ import com.example.pryappcursos.Interfaceapi.RetrofitCliente
 
 class clsVerRegistrosModelo {
     suspend fun obtenerCarreras(): List<dataCarreras> {
-        return RetrofitCliente.apiService.obtenerCarreras()
+        val datos = RetrofitCliente.apiService.obtenerCarreras()
+        val listaFinal = mutableListOf(dataCarreras(0, "Todas las carreras"))
+        listaFinal.addAll(datos)
+        return listaFinal
     }
 
     suspend fun obtenerEstadoInscripciones(idCarrera: Int): dataEstadoInscripciones {

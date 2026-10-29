@@ -1,7 +1,7 @@
 package com.example.pryappcursos.Presentador
 
 import com.example.pryappcursos.Modelo.clsVerRegistrosModelo
-import com.example.pryappcursos.VerRegistrosActivity
+import com.example.pryappcursos.Vista.VerRegistrosActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
