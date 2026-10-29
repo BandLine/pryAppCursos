@@ -10,6 +10,8 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+
+import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -31,6 +33,12 @@ class RegistroCursosActivity : AppCompatActivity() {
     private lateinit var btnConfirmar: Button
     private lateinit var btnCancelar: Button
     private var idCurso = 0
+import com.example.pryappcursos.R
+
+class RegistroCursosActivity : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -91,5 +99,7 @@ class RegistroCursosActivity : AppCompatActivity() {
     }
     fun cerrar() {
         finish()
+    }
+}
     }
 }

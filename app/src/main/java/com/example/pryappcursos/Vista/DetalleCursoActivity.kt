@@ -1,4 +1,4 @@
-package com.example.pryappcursos
+package com.example.pryappcursos.Vista
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.pryappcursos.Modelo.dataDetalleCurso
 import com.example.pryappcursos.Presentador.clsDetalleCursoPresentador
+import com.example.pryappcursos.R
 
 class DetalleCursoActivity : AppCompatActivity() {
     private lateinit var presenter: clsDetalleCursoPresentador

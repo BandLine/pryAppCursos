@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#F4F7FB"
     tools:ignore="HardcodedText"
-    tools:context=".DetalleCursoActivity">
+    tools:context=".Vista.DetalleCursoActivity">
 
     <ScrollView
         android:layout_width="0dp"

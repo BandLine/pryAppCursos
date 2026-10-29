@@ -10,6 +10,8 @@
     android:background="#15558B"
     tools:context=".Vista.RegistroCursosActivity">
 
+    tools:ignore="HardcodedText"
+    tools:context=".Vista.RegistroCursosActivity">
 
     <LinearLayout
         android:id="@+id/encabezado"

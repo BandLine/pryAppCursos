@@ -1,6 +1,6 @@
 package com.example.pryappcursos.Presentador
 
-import com.example.pryappcursos.DetalleCursoActivity
+import com.example.pryappcursos.Vista.DetalleCursoActivity
 import com.example.pryappcursos.Modelo.clsDetalleCursoModelo
 import com.example.pryappcursos.Modelo.dataDetalleCurso
 import kotlinx.coroutines.CoroutineScope
