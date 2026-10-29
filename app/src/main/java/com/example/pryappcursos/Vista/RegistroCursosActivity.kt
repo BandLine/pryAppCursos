@@ -10,8 +10,6 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-
-import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,7 +21,6 @@ import com.example.pryappcursos.R
 import java.util.Calendar
 class RegistroCursosActivity : AppCompatActivity() {
     private lateinit var presentador: clsRegistroPresentador
-    private lateinit var btnRegresar: ImageButton
     private lateinit var txtInscripcion: TextView
     private lateinit var imgCurso: ImageView
     private lateinit var txtNombreCurso: TextView
@@ -31,13 +28,7 @@ class RegistroCursosActivity : AppCompatActivity() {
     private lateinit var txtFecha: EditText
     private lateinit var txtCorreo: EditText
     private lateinit var btnConfirmar: Button
-    private lateinit var btnCancelar: Button
     private var idCurso = 0
-import com.example.pryappcursos.R
-
-class RegistroCursosActivity : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,14 +39,13 @@ class RegistroCursosActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        btnRegresar = findViewById(R.id.btnRegistrarse)
-        txtInscripcion = findViewById(R.id.barraInscripciones)
+        btnConfirmar = findViewById(R.id.btnConfirmar)
+        txtInscripcion = findViewById(R.id.txtInscripcion)
         imgCurso = findViewById(R.id.imgCurso)
         txtNombreCurso = findViewById(R.id.txtNombreCurso)
         txtMatricula = findViewById(R.id.txtMatricula)
         txtFecha = findViewById(R.id.txtFecha)
         txtCorreo = findViewById(R.id.txtCorreo)
-        btnCancelar = findViewById(R.id.btnCancelar)
         idCurso = intent.getIntExtra("ID_CURSO", 0)
         val nombre = intent.getStringExtra("NOMBRE_CURSO") ?: ""
         val imagen = intent.getStringExtra("IMAGEN_CURSO") ?: ""
@@ -71,8 +61,6 @@ class RegistroCursosActivity : AppCompatActivity() {
         txtMatricula.setOnEditorActionListener(this::buscarDatos)
         txtFecha.setOnClickListener { abrirCalendario() }
         btnConfirmar.setOnClickListener { presentador.registrar(idCurso, txtMatricula.text.toString(), txtCorreo.text.toString(), txtFecha.text.toString()) }
-        btnCancelar.setOnClickListener { finish() }
-        btnRegresar.setOnClickListener { finish() }
     }
     fun buscarDatos(v: TextView?, accion: Int, evento: KeyEvent?): Boolean {
         if (accion == EditorInfo.IME_ACTION_DONE) {
@@ -99,7 +87,5 @@ class RegistroCursosActivity : AppCompatActivity() {
     }
     fun cerrar() {
         finish()
-    }
-}
     }
 }

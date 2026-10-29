@@ -61,7 +61,7 @@ class DetalleCursoActivity : AppCompatActivity() {
         txtDias.text = curso.dia_semana + " (" + curso.hora_inicio + " - " + curso.hora_fin + " hrs)"
 
         // URL
-        val baseUrl = "http://10.255.134.170:8080/cursos_api/"
+        val baseUrl = "http://10.156.148.170:8080/cursos_api/"
         val urlCompleta = baseUrl + curso.imagen_url
 
         Glide.with(this)
