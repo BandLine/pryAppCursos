@@ -50,7 +50,6 @@ class VerRegistrosActivity : AppCompatActivity() {
         rvEstado.adapter = adaptador
 
         btnVolver.setOnClickListener { finish() }
-        findViewById<android.widget.ImageButton>(R.id.btnRegresar).setOnClickListener { finish() }
 
         spnCarreras.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
