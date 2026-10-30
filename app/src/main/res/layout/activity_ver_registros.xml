@@ -20,15 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <ImageButton
-            android:id="@+id/btnRegresar"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Regresar"
-            android:src="@android:drawable/ic_media_previous"
-            app:tint="@android:color/white" />
-
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="0dp"
@@ -39,10 +30,6 @@
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
-
-        <View
-            android:layout_width="48dp"
-            android:layout_height="48dp" />
 
     </LinearLayout>
 
