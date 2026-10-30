@@ -24,4 +24,11 @@
     <string name="btn_volver">VOLVER AL CATÁLOGO</string>
     <string name="regresar">Regresar</string>
     <string name="imagen_curso">Imagen del curso</string>
+    <string name="txtTitulo">CATÁLOGO DE CURSOS</string>
+    <string name="btnVerRegistros">VER REGISTROS</string>
+    <string name="imgCurso">Imagen del curso</string>
+    <string name="txtNombreCurso">Nombre del curso</string>
+    <string name="txtSalon">Salón:</string>
+    <string name="btnVerDetalle">VER DETALLE</string>
+    <string name="btnRegistrarse">REGISTRARSE</string>
 </resources>
